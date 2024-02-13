@@ -1,26 +1,65 @@
 import 'package:flutter/material.dart';
 
-class Tapage extends StatefulWidget {
-  const Tapage({super.key});
+class Add extends StatefulWidget {
+  const Add({super.key});
 
   @override
-  State<Tapage> createState() => _TapageState();
+  State<Add> createState() => _AddState();
 }
 
-class _TapageState extends State<Tapage> {
+class _AddState extends State<Add> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Text("Page 2",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20
-          ),
-          )
-          )
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 30,top: 27),
+              child: Text("Add Task",
+              style: TextStyle(
+                fontSize: 19,
+                fontWeight: FontWeight.w400
+              ),
+              ),
+            ),
+             Padding(
+        padding: const EdgeInsets.only(top: 20,left: 20),
+        child: SizedBox(
+          height: 60,
+          width: 350,
+          child: TextFormField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder()
+              ),
+              ),
         ),
+      ),
+      Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 180),
+              child: Text("Cancel",
+              style: TextStyle(fontSize: 15),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30),
+              child: Text("Ok",
+              style: TextStyle(fontSize: 15),
+              ),
+            )
+          ],
+        ),
+      )
+          ],
+        ),
+        
+        )
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task/task1.1.dart';
+import 'package:task/task1.2.dart';
 
 class Cale extends StatefulWidget {
   const Cale({super.key});
@@ -9,7 +10,7 @@ class Cale extends StatefulWidget {
 }
 
 class _CaleState extends State<Cale> {
-  List task=["Task 1","Task 2","Task 3","Task 4"];
+  List task=["Task 1","Task 2","Task 3","Task 4","Task 5","Task 6"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -171,8 +172,10 @@ class _CaleState extends State<Cale> {
                   ),
                   Container(
                     height: 30,
-                    width: 58,
-                    color: Colors.black,
+                    width: 30,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),
+                    color: Colors.blue,
+                    ),
                     child: Center(
                       child: Text("6",
                       style: TextStyle(color: Colors.white),
@@ -224,7 +227,7 @@ class _CaleState extends State<Cale> {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: 4,
+                itemCount: task.length,
                 itemBuilder: (ctx,index){
                   return Padding(
                     padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
@@ -236,16 +239,36 @@ class _CaleState extends State<Cale> {
                           Padding(
                             padding: const EdgeInsets.only(left: 20),
                           child: Text(task[index],
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15
+                            ),
                           ),
 
                           ),
                         Padding(
                           padding: const EdgeInsets.only(left: 220),
-                          child: Icon(Icons.edit_square),
+                          child: InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (ctx){
+                                return Edit(name:task[index]);
+                              }
+                              ),
+                              );
+                            },
+                            child: Icon(Icons.edit_square)),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 30),
-                          child: Icon(Icons.delete),
+                          child: InkWell(
+                           onTap: (){
+                           setState(() {
+                              task.removeAt(index);
+                           });
+                           }, 
+                            
+                            child: Icon(Icons.delete)
+                            ),
                         )
                         ],
                       ),
@@ -259,7 +282,7 @@ class _CaleState extends State<Cale> {
                 ),
             ),
           
-          Row(
+          Row( 
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
@@ -269,7 +292,7 @@ class _CaleState extends State<Cale> {
                   width: 50,
                   child: IconButton(onPressed: (){
                     Navigator.of(context).push(MaterialPageRoute(builder: (ctx){
-                      return Tapage();
+                      return Add();
                     }
                     )
                     );
