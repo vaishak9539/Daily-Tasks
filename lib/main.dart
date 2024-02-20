@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task/task2_whatsapp.dart';
+import 'package:task/task3_calculator.dart';
+
 
 
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Homepage()
+      home: Calculator1()
     );
   }
 }
