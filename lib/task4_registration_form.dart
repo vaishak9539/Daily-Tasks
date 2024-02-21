@@ -201,7 +201,7 @@ class _RegistrationState extends State<Registration> {
                     print(phnumber.text);
                     print(gender);
                     }, 
-                    child: Text("data")),
+                    child: Text("Submit")),
             
                      ElevatedButton(onPressed: (){
                       name.clear();
@@ -212,10 +212,7 @@ class _RegistrationState extends State<Registration> {
                   ],
                 ),
               ),
-              // ! name==null? Text(""):Text(name),
-              //!  name==null? Text(""):Text(emailid),
-              //!  name==null? Text(""):Text(phnumber.toString()),
-              //!  Text(gender)
+             
             ]),
           ),
         ),
