@@ -190,7 +190,7 @@ class _RegistrationState extends State<Registration> {
                 ],
               ),
             
-              //* 2 InkWell Button
+              //* 2 Elevatedbutton Button
               Padding(
                 padding: const EdgeInsets.only(top: 60, left: 100),
                 child: Row(
