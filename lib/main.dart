@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task/task3_calculator.dart';
+import 'package:task/task4_registration_form.dart';
 
 
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Calculator1()
+      home: Registration()
     );
   }
 }

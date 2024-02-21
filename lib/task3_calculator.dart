@@ -10,7 +10,8 @@ class Calculator1 extends StatefulWidget {
 class _Calculator1State extends State<Calculator1> {
   var FirstNum=0;
   var SecontNum=0;
-  var Sybmol=0;
+  var operater;
+  var result;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,7 @@ class _Calculator1State extends State<Calculator1> {
                   height: 100,
                   width: 150,
                   color: Colors.white,
+                  
                 ),
               ),
               Padding(
@@ -57,14 +59,20 @@ class _Calculator1State extends State<Calculator1> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                             
-                    FloatingActionButton(onPressed: (){},
+                    FloatingActionButton(onPressed: (){
+                      FirstNum=7;
+                    },
                    child: Text("7"),
                    ),
                   
-                    FloatingActionButton(onPressed: (){},
+                    FloatingActionButton(onPressed: (){
+                      FirstNum=8;
+                    },
                    child: Text("8"),
                    ),
-                    FloatingActionButton(onPressed: (){},
+                    FloatingActionButton(onPressed: (){
+                      FirstNum=9;
+                    },
                    child: Text("9"),
                    ),
                     FloatingActionButton(onPressed: (){},
@@ -93,7 +101,11 @@ class _Calculator1State extends State<Calculator1> {
                     },
                    child: Text("6"),
                    ),
-                    FloatingActionButton(onPressed: (){},
+                    FloatingActionButton(onPressed: (){
+                      operater="-";
+                       SecontNum=FirstNum;
+                        FirstNum=0;
+                    },
                    child: Text("-"),
                    ),
                   ],
@@ -119,7 +131,11 @@ class _Calculator1State extends State<Calculator1> {
                     },
                    child: Text("3"),
                    ),
-                    FloatingActionButton(onPressed: (){},
+                    FloatingActionButton(onPressed: (){
+                      operater='+';
+                      SecontNum=FirstNum;
+                      FirstNum=0;
+                    },
                    child: Text("+"),
                    ),
                   ],
@@ -139,7 +155,19 @@ class _Calculator1State extends State<Calculator1> {
                     FloatingActionButton(onPressed: (){},
                    child: Text("."),
                    ),
-                    FloatingActionButton(onPressed: (){},
+                    FloatingActionButton(onPressed: (){
+                      if(operater=="+"){
+                         setState(() {
+                            result=FirstNum+SecontNum;
+                          print(result);
+                         });
+                      };
+                      if(operater=="-"){
+                        result=SecontNum-FirstNum;
+                        result;
+                      }
+                      
+                    },
                    child: Text("="),
                    ),
                   ],
