@@ -28,6 +28,8 @@ class _Calculator1State extends State<Calculator1> {
                   height: 100,
                   width: 150,
                   color: Colors.white,
+                  child: Center(
+                    child: Text(result!=null?result.toString():"")),
                   
                 ),
               ),
@@ -92,7 +94,9 @@ class _Calculator1State extends State<Calculator1> {
                    child: Text("4"),
                    ),
                     FloatingActionButton(onPressed: (){
-                      FirstNum=5;
+                      setState(() {
+                        FirstNum=5;
+                      });
                     },
                    child: Text("5"),
                    ),
@@ -159,7 +163,7 @@ class _Calculator1State extends State<Calculator1> {
                       if(operater=="+"){
                          setState(() {
                             result=FirstNum+SecontNum;
-                          print(result);
+                          
                          });
                       };
                       if(operater=="-"){
